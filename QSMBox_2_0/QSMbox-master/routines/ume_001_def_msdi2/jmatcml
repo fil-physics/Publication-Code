@@ -1,0 +1,25 @@
+#!/bin/bash
+#++++++++++++++++++++++++++ Script begins here ++++++++++++++++++++++++++
+if [ "$1" == "-h" ] || [ "$1" == "-help" ] || [ "$1" == "--help" ]; then
+        ########## HELP begins here ##########
+        echo
+        echo "Run MATLAB code from shell"
+        echo " \$ `basename $0` <MATLAB command>"
+        echo
+        ########### HELP ends here ###########
+else
+        if [ -z "$1" ]; then
+                $0 --help
+        else
+                ########## BODY begins here ##########
+                if [ -n "$1" ]; then
+                        MATLABCALL=matlab
+                        TS=`date +"%Y%m%d_%H%M%S"`
+                        echo "To monitor progress, open new terminal window and run:"
+                        echo "tail -f $PWD/*.log" 
+                        nohup ${MATLABCALL} -nodesktop -nosplash -r "${1}; quit" < /dev/null > matop_"$TS".log 2>&1
+                fi
+                ########### BODY ends here ###########
+        fi
+fi
+#+++++++++++++++++++++++++++ Script ends here +++++++++++++++++++++++++++

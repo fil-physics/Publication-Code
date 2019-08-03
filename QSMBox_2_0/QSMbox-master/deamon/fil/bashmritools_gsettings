@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# BASHMRITOOLS GLOBAL SETTINGS FILE
+# Created by Julio Acosta-Cabronero
+
+# Edit below as necessary
+
+###############################################################################
+# BASHPROF (see your redhat/debian/osx requirements)
+
+#export BASHPROF=${HOME}/.bash_profile			        ### LOGIN SHELL
+
+export BASHPROF=${HOME}/.bashrc		 	    ### NON-LOGIN SHELL 
+
+###############################################################################
+# GZIP (command and arguments)
+# NOTE: pigz can spread compression over multiple CPUs
+
+#export BMTZIP="gzip -9 -f -v" 					####### DEFAULT
+
+export BMTZIP="pigz -9 -f -v"
+
+###############################################################################
+# MATLAB CALL (full PATH also valid)
+# NOTE: If multiple MATLAB versions coexist in your system you can choose
+#       here which one to use
+
+#export BMTMATCALL=matlab					####### DEFAULT
+
+export BMTMATCALL=/usr/local/MATLAB/R2017a/bin/matlab
+
+###############################################################################
+# SPM
+# Download from: http://www.fil.ion.ucl.ac.uk/spm/software/
+
+export BMTSPM=/root/matlab/spm12.3
