@@ -1,0 +1,2 @@
+Distortion correction code for high-resolution 3DEPI data using B0 field mapping and reversed-PE techniques. 
+Quantitative measures: Dice Coefficient (DC) and Correlation Ratio (CR).
